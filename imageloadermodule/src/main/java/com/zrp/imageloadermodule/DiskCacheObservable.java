@@ -33,7 +33,6 @@ public class DiskCacheObservable extends CacheObservable {
 
     @Override
     public Image getDataFromCache(String url) {
-        LogUtil.d("getDataFromDistCache");
         return new Image(url, getDataFromDiskLruCache(url));
     }
 

@@ -14,7 +14,7 @@ public class MD5Utils {
 			digest = MessageDigest.getInstance("MD5");
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
-			Log.d("jason", "md5 算法不支持!");
+			Log.e("zrp", "md5 算法不支持!");
 		}
 	}
 	

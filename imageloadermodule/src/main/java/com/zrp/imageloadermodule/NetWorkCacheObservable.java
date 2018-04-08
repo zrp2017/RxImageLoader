@@ -16,7 +16,6 @@ public class NetWorkCacheObservable extends CacheObservable {
 
     @Override
     public Image getDataFromCache(String url) {
-        LogUtil.d("getDataFromNetCache");
         return new Image(url,downLoadImage(url));
     }
 
@@ -26,10 +25,9 @@ public class NetWorkCacheObservable extends CacheObservable {
     }
     private Bitmap downLoadImage(String url){
         Bitmap bitmap = null;
-        InputStream inputStream = null;
         try {
             URLConnection urlConnection = new URL(url).openConnection();
-            inputStream = urlConnection.getInputStream();
+            InputStream inputStream = urlConnection.getInputStream();
             bitmap = BitmapFactory.decodeStream(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
